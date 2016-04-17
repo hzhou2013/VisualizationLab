@@ -3,15 +3,21 @@ function plotData(xy_data, x_prop, y_prop, initialize) {
       width = 500 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
-  // setup x 
+  // setup x
   var xValue = function(d) { return d[0];}, // data -> value
-      xScale = d3.scale.linear().domain([0.7*d3.min(xy_data, xValue), 1.2*d3.max(xy_data, xValue)]).range([0, width]), // value -> display
+      xMin = d3.min(xy_data, xValue),
+      xMax = d3.max(xy_data, xValue),
+      xRange = xMax - xMin,
+      xScale = d3.scale.linear().domain([xMin - xRange * 0.05, xMax + xRange * 0.05]).range([0, width]), // value -> display
       xMap = function(d) { return xScale(xValue(d)) + margin.left;}, // data -> display
       xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
   // setup y
   var yValue = function(d) { return d[1];}, // data -> value
-      yScale = d3.scale.linear().domain([0.7*d3.min(xy_data, yValue), 1.2*d3.max(xy_data, yValue)]).range([height, 0]), // value -> display
+      yMin = d3.min(xy_data, yValue),
+      yMax = d3.max(xy_data, yValue),
+      yRange = yMax - yMin,
+      yScale = d3.scale.linear().domain([yMin - yRange * 0.05, yMax + yRange * 0.05]).range([height, 0]), // value -> display
       yMap = function(d) { return yScale(yValue(d)) + margin.top;}, // data -> display
       yAxis = d3.svg.axis().scale(yScale).orient("left");
 
