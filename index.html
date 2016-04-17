@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>My Website</title>
+  <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script text="text/javascript" src="main.js"></script>
+  <link rel=stylesheet type="text/css" href="style.css"/>
+</head>
+<body>
+<h4 id="hovered"></h4>
+<div>
+  <svg id="plot"></svg>
+</div>
+<div class="ui">
+  <div>
+    <label>X-Axis</label>
+    <select id="sel-x"></select>
+    <label>Y-Axis</label>
+    <select id="sel-y"></select>
+  </div>
+  <div>
+    <input id="mpg-min" type="text" value="0" size="10">
+    <input id="mpg-max" type="text" value="30" size="10">
+    <button id="update">Query MPG</button>
+  </div>
+</div>
+</body>
+</html>
+
