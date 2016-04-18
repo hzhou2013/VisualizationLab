@@ -1,0 +1,17 @@
+.x-axis line {
+  shape-rendering: crispEdges;
+  stroke: black;
+  fill: none;
+}
+
+.y-axis line {
+  shape-rendering: crispEdges;
+  stroke: black;
+  fill: none;
+}
+
+path {
+  shape-rendering: crispEdges;
+  stroke: black;
+  fill: none;
+}
